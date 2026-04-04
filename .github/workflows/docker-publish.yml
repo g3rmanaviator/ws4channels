@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - my-workflows  # Triggers when you merge into main
+  workflow_dispatch:
 
 jobs:
   build:
