@@ -105,11 +105,11 @@ Environment Variables
 
 	•  CHANNEL_NUMBER: Sets the channel number (default: 275)
   
-  •  SHUFFLE_MUSIC: Randomize the order in which detected mp3s are played (default: false)
+    •  SHUFFLE_MUSIC: Randomize the order in which detected mp3s are played (default: false)
   
-  •  PERMALINK_URL: Pass configuration parameters via permalink generated from ws4kp
+    •  PERMALINK_URL: Pass configuration parameters via permalink generated from ws4kp
 
-  •  WS4KP_INTERNATIONAL: Set to `true` when pointing at a [ws4kp-international](https://github.com/mwood77/ws4kp-international) instance. Adjusts the screenshot crop offset to match that variant's layout (default: false)
+    •  WS4KP_INTERNATIONAL: Set to `true` when pointing at a [ws4kp-international](https://github.com/mwood77/ws4kp-international) instance. Adjusts the screenshot crop offset to match that variant's layout (default: false)
 
 ## Hardware Acceleration Support
 
