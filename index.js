@@ -16,6 +16,7 @@ const STREAM_PORT = process.env.STREAM_PORT || '9798';
 const WS4KP_URL = `http://${WS4KP_HOST}:${WS4KP_PORT}`;
 const HLS_SETUP_DELAY = 2000;
 const FRAME_RATE = process.env.FRAME_RATE || 10;
+const WS4KP_INTERNATIONAL = process.env.WS4KP_INTERNATIONAL?.toLowerCase() === 'true';
 
 const OUTPUT_DIR = path.join(__dirname, 'output');
 const AUDIO_DIR = path.join(__dirname, 'music');
@@ -165,7 +166,7 @@ async function startTranscoding() {
       // Updated 16:9 capture for version 1.6
       const screenshot = await page.screenshot({
         type:'jpeg',
-        clip:{ x:4, y:50, width:840, height:470 } // crop top, right, and bottom based on your measurements
+        clip:{ x:WS4KP_INTERNATIONAL ? 8 : 4, y:50, width:840, height:470 } // crop top, right, and bottom based on your measurements
       });
       ffmpegStream.write(screenshot);
     } catch(err){
