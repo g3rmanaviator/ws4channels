@@ -3,7 +3,7 @@ name: Build and Publish Docker Image
 on:
   push:
     branches:
-      - my-workflows  # Triggers when you merge into main
+      - wsk4p-international
   workflow_dispatch:
 
 jobs:
