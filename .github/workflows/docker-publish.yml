@@ -3,7 +3,7 @@ name: Build and Publish Docker Image
 on:
   push:
     branches:
-      - wsk4p-international
+      - ws4kp-international
   workflow_dispatch:
 
 jobs:
