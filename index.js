@@ -315,6 +315,7 @@ app.get('/health', (req, res) => {
 
 const { cpus, memoryMB } = getContainerLimits();
 console.log(`Version ${VERSION} | Running with ${cpus} CPU cores, ${memoryMB}MB RAM`);
+console.log(`Channel: ${CHANNEL_NAME} | TVG-ID: ${TVG_ID} | Guide Title: ${GUIDE_TITLE} | Description: ${TVG_EPG_DESCRIPTION}`);
 
 app.listen(STREAM_PORT, async () => {
   console.log(`Streaming server running on port ${STREAM_PORT}`);
