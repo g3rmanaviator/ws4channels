@@ -117,7 +117,7 @@ Environment Variables
  
 	•  FRAME_RATE: Stream frame rate (default: 10)
 
-	•  CHANNEL_NUMBER: Sets the channel number in the M3U playlist (default: 275)
+	•  CHANNEL_NUMBER: Sets the channel number (`tvg-chno`) in the M3U playlist (default: 275)
 
 	•  TVG_ID: Sets the TV Guide ID (`tvg-id`) used in the M3U playlist and XMLTV guide (default: weatherStar4000)
 
