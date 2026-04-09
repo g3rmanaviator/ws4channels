@@ -19,6 +19,9 @@ const HLS_SETUP_DELAY = 2000;
 const FRAME_RATE = Number(process.env.FRAME_RATE || 10);
 const WS4KP_INTERNATIONAL = process.env.WS4KP_INTERNATIONAL?.toLowerCase() === 'true';
 const ENABLE_IGPU = process.env.ENABLE_IGPU?.toLowerCase() === 'true';
+const TVG_ID = process.env.TVG_ID || 'weatherStar4000';
+const CHANNEL_NUMBER = process.env.CHANNEL_NUMBER || '275';
+const TVG_EPG_DESCRIPTION = process.env.TVG_EPG_DESCRIPTION || 'Enjoy your local weather with a touch of nostalgia.';
 const PUPPETEER_EXECUTABLE_PATH =
   process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/google-chrome-stable';
 
@@ -119,7 +122,7 @@ function generateXMLTV(host) {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tv SYSTEM "xmltv.dtd">
 <tv>
-<channel id="WS4000">
+<channel id="${TVG_ID}">
 <display-name>WeatherStar 4000</display-name>
 <icon src="${baseUrl}/logo/ws4000.png" />
 </channel>`;
@@ -130,9 +133,9 @@ function generateXMLTV(host) {
     const start = startTime.toISOString().replace(/[-:T]/g, '').split('.')[0] + ' +0000';
     const end = endTime.toISOString().replace(/[-:T]/g, '').split('.')[0] + ' +0000';
     xml += `
-<programme start="${start}" stop="${end}" channel="WS4000">
+<programme start="${start}" stop="${end}" channel="${TVG_ID}">
 <title lang="en">Local Weather</title>
-<desc lang="en">Enjoy your local weather with a touch of nostalgia.</desc>
+<desc lang="en">${TVG_EPG_DESCRIPTION}</desc>
 <icon src="${baseUrl}/logo/ws4000.png" />
 </programme>`;
   }
@@ -291,7 +294,7 @@ app.get('/playlist.m3u', (req, res) => {
   const host = req.headers.host || `localhost:${STREAM_PORT}`;
   const baseUrl = `http://${host}`;
   const m3uContent = `#EXTM3U
-#EXTINF:-1 channel-id="weatherStar4000" tvg-id="weatherStar4000" tvg-channel-no="275" tvc-guide-placeholders="3600" tvc-guide-title="Local Weather" tvc-guide-description="Enjoy your local weather with a touch of nostalgia." tvc-guide-art="${baseUrl}/logo/ws4000.png" tvg-logo="${baseUrl}/logo/ws4000.png",WeatherStar 4000
+#EXTINF:-1 channel-id="${TVG_ID}" tvg-id="${TVG_ID}" tvg-channel-no="${CHANNEL_NUMBER}" tvc-guide-placeholders="3600" tvc-guide-title="Local Weather" tvc-guide-description="${TVG_EPG_DESCRIPTION}" tvc-guide-art="${baseUrl}/logo/ws4000.png" tvg-logo="${baseUrl}/logo/ws4000.png",WeatherStar 4000
 ${baseUrl}/stream/stream.m3u8
 `;
   res.set('Content-Type', 'application/x-mpegURL');

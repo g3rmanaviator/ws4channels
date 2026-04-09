@@ -1,5 +1,10 @@
 # Latest Update
 
+04/09/2026
+- Added `TVG_ID` environment variable to set the TV Guide ID used in the M3U playlist and XMLTV guide (default: `weatherStar4000`)
+- Added `CHANNEL_NUMBER` environment variable to set the channel number in the M3U playlist (default: `275`)
+- Added `TVG_EPG_DESCRIPTION` environment variable to set the EPG description shown in the guide (default: `Enjoy your local weather with a touch of nostalgia.`)
+
 04/06/2026
 - Upgraded base image to **Ubuntu 24.04**
 - Upgraded to **Node.js 22**
@@ -112,7 +117,11 @@ Environment Variables
  
 	•  FRAME_RATE: Stream frame rate (default: 10)
 
-	•  CHANNEL_NUMBER: Sets the channel number (default: 275)
+	•  CHANNEL_NUMBER: Sets the channel number in the M3U playlist (default: 275)
+
+	•  TVG_ID: Sets the TV Guide ID (`tvg-id`) used in the M3U playlist and XMLTV guide (default: weatherStar4000)
+
+	•  TVG_EPG_DESCRIPTION: Sets the EPG description shown in the guide (default: Enjoy your local weather with a touch of nostalgia.)
   
     •  SHUFFLE_MUSIC: Randomize the order in which detected mp3s are played (default: false)
   
