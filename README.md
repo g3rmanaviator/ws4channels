@@ -4,6 +4,9 @@
 - Added `TVG_ID` environment variable to set the TV Guide ID used in the M3U playlist and XMLTV guide (default: `weatherStar4000`)
 - Added `CHANNEL_NUMBER` environment variable to set the channel number in the M3U playlist (default: `275`)
 - Added `TVG_EPG_DESCRIPTION` environment variable to set the EPG description shown in the guide (default: `Enjoy your local weather with a touch of nostalgia.`)
+- Added `CHANNEL_NAME` environment variable to set the channel display name shown in guide apps (default: `WeatherStar 4000`)
+- Added `GUIDE_TITLE` environment variable to set the programme title shown in the guide (default: `Local Weather`)
+- Added `GUIDE_TITLE` environment variable to set the programme title shown in the guide (default: `Local Weather`)
 
 04/06/2026
 - Upgraded base image to **Ubuntu 24.04**
@@ -120,6 +123,10 @@ Environment Variables
 	•  CHANNEL_NUMBER: Sets the channel number (`tvg-chno`) in the M3U playlist (default: 275)
 
 	•  TVG_ID: Sets the TV Guide ID (`tvg-id`) used in the M3U playlist and XMLTV guide (default: weatherStar4000)
+
+	•  CHANNEL_NAME: Sets the channel display name shown in guide apps (default: WeatherStar 4000)
+
+	•  GUIDE_TITLE: Sets the programme title shown in the guide (default: Local Weather)
 
 	•  TVG_EPG_DESCRIPTION: Sets the EPG description shown in the guide (default: Enjoy your local weather with a touch of nostalgia.)
   
